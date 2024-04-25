@@ -6,6 +6,18 @@
   font-family: "exos";
   src: url(font/ExoSpace.606b1a1e5fed2c8afb24.ttf);
 }
+@keyframes slideDown {
+  from {
+    transform: translateY(
+      -100%
+    ); /* Inicia fuera de la vista, arriba del viewport */
+    opacity: 0; /* Comienza completamente transparente */
+  }
+  to {
+    transform: translateY(0); /* Termina en la posición normal */
+    opacity: 1; /* Completamente visible */
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -23,152 +35,109 @@ body {
 section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column-reverse;
-  align-items: center;
+  height: 100vh;
   padding: 100px;
 }
-@keyframes slideDown {
-  from {
-    transform: translateY(
-      -100%
-    ); /* Inicia fuera de la vista, arriba del viewport */
-    opacity: 0; /* Comienza completamente transparente */
-  }
-  to {
-    transform: translateY(0); /* Termina en la posición normal */
-    opacity: 1; /* Completamente visible */
-  }
-}
-header {
-  position: absolute;
+
+section header nav {
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
+  height: 12%;
   padding: 2% 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #10e95582;
-  position: fixed;
+  /* Animacion para que aparezca el menu de forma progresiva */
   animation: slideDown 2s ease forwards;
-  z-index: 10;
-  border: #14e956 1px solid;
 }
-header .nombre {
+section header nav .nombre,
+section header nav li a {
   color: #14e956;
-  font-size: 2em;
+  background: rgba(2, 30, 2, 0.916);
   text-decoration: none;
   text-transform: uppercase;
-  background: rgba(2, 30, 2, 0.916);
   border-radius: 5px;
+  padding: 5px 10px;
+}
+section header nav .nombre:hover,
+section header nav li a:hover {
+  color: rgba(2, 30, 2, 0.916);
+  background: #14e956;
+}
+section header nav .nombre {
+  font-size: 2em;
   padding: 5px 10px;
   transition: 0.3s;
 }
-header .nombre:hover {
-  color: rgba(2, 30, 2, 0.916);
-  background: #14e956;
+
+section header nav .nombre:hover {
   transition: 1s;
   border-bottom: 5px solid rgba(1, 28, 1, 0.588);
   /* Se utiliza para que cuando pasamos por encima el cursor haga el efecto de girar y ahumentar la escala */
   transform: rotate(-3deg) scale(1.1);
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
 }
-header .navbar {
-  position: relative;
+section header nav .navbar {
   display: flex;
 }
-header .navbar li {
+section header nav li {
   list-style: none;
-  margin-left: 30px;
   font-size: 1.6em;
-  text-decoration: none;
-  text-transform: uppercase;
+  margin-left: 30px;
 }
-header .navbar li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #14e956;
-  background: rgba(2, 30, 2, 0.916);
-  border-radius: 5px;
+section header nav li a {
   padding: 10px;
   transition: 0.3s;
-  font-size: 0.9em;
 }
-header .navbar li a:hover {
-  color: rgba(2, 30, 2, 0.916);
-  background: #14e956;
+section header nav li a:hover {
   transition: 0.7s;
   border-bottom: 5px solid rgba(1, 28, 1, 0.588);
   padding: 5px;
 }
 .contenido {
   width: 100%;
-  border: #14e956 1px solid;
-  text-align: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin-top: 4%;
-}
-.contenido .tituloBox {
-  display: inline-block;
-  max-width: 500px;
-  z-index: 1;
-  position: relative;
-  text-align: left;
-  border: #14e956 1px solid;
-}
-.contenido .tituloBox .imgBox {
+  height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
-.contenido .tituloBox h2 {
+.tituloBox h2 {
   font-size: 2em;
   color: #f5f5f5;
   font-family: "exos";
   text-transform: uppercase;
   transition: 0.5s;
 }
-
-.contenido .tituloBox .texto1 {
-  font-size: 1.8em;
+.tituloBox .texto1,
+.tituloBox .texto2 {
   color: #14e956;
   font-family: "cybor";
-  text-transform: uppercase;
 }
-.contenido .tituloBox .elec {
-  font-size: 2em;
-  color: #14e956;
-  font-family: "cybor";
-  text-transform: uppercase;
+.tituloBox .texto1 {
+  font-size: 1.5em;
+}
+.tituloBox .texto2 {
   background: rgba(2, 30, 2, 0.943);
   border-radius: 15px;
   padding-top: 5px;
-  text-align: center;
   margin-bottom: 10px;
+  text-align: center;
+  font-size: 2em;
 }
-.contenido h2:hover {
-  transform: scale(1.2);
-  transition: 0.5s;
-}
-.contenido .tituloBox .frase {
+.tituloBox .frase {
   padding-top: 10px;
   font-size: 1.5em;
   color: #f5f5f5;
   font-family: "exos";
-  text-transform: uppercase;
-  transition: 0.5s;
+  transition: 1s;
 }
-.contenido .tituloBox .frase:hover {
-  transform: scale(1.2);
-  transition: 0.5s;
-}
-
-.contenido .tituloBox .sobre {
+.tituloBox .sobre {
   position: relative;
   text-decoration: none;
-  text-transform: uppercase;
   background: #14e956;
   color: rgba(2, 30, 2, 0.943);
   border-radius: 5px;
@@ -178,33 +147,20 @@ header .navbar li a:hover {
   top: 15px;
   transition: 1s;
 }
-.contenido .tituloBox .sobre:hover {
+.tituloBox h2:hover,
+.frase:hover {
+  transform: scale(1.2);
+}
+.tituloBox .sobre:hover {
   background: #f5f5f5;
-  transition: 1s;
 }
-.imgBox {
-  display: inline-block;
-  border: #14e956 1px solid;
-}
-.imgBox img {
-  max-width: 500px;
-}
-.copy {
-  position: absolute;
-  bottom: 0px;
-  border: #14e956 1px solid;
-}
-.copy p {
-  font-family: "exos";
-  color: #f5f5f5;
-}
+
 .redes {
   position: absolute;
   right: 0px;
   bottom: 0px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 0 100px 30px;
   list-style: none;
 }
@@ -220,4 +176,61 @@ header .navbar li a:hover {
   transform: scale(1.1);
   transition: 0.5s;
   color: #f5f5f5;
+}
+.copy {
+  position: absolute;
+  bottom: 1px;
+}
+.copy p {
+  font-family: "exos";
+  font-size: 1em;
+}
+@media (width<1200px) {
+  section header nav {
+    height: 8%;
+    padding: 2% 50px;
+  }
+  .tituloBox,
+  .copy {
+    font-size: 18px;
+  }
+  .contenido {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  section header nav .nombre {
+    font-size: 1em;
+  }
+  section header nav li {
+    font-size: 0.8em;
+  }
+  section header nav li a {
+    padding: 5px;
+  }
+  .imgBox {
+    margin-top: 100px;
+  }
+  .imgBox img {
+    width: 25em;
+  }
+}
+@media (width<800px) {
+  section header nav .navbar {
+    display: none;
+  }
+  .redes {
+    position: unset;
+  }
+  .imgBox img {
+    width: 15em;
+  }
+  .tituloBox,
+  .copy {
+    font-size: 14px;
+  }
+}
+@media (width<1200px) and (height<800px) {
+  section {
+    height: 100%;
+  }
 }
