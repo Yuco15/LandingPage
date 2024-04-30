@@ -45,7 +45,7 @@ section header nav {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 10%;
+  height: 70px;
   padding: 2% 100px;
   display: flex;
   justify-content: space-between;
@@ -150,7 +150,7 @@ section header nav li a:hover {
 }
 .tituloBox h2:hover,
 .frase:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .tituloBox .sobre:hover {
   background: #f5f5f5;
@@ -186,12 +186,303 @@ section header nav li a:hover {
   font-family: "exos";
   font-size: 1em;
 }
+
+/*----------------------- QUIEN SOY--------------- */
+.quiensoy h1 {
+  color: #14e956;
+}
+.quiensoy p {
+  font-family: "exos";
+  font-size: 1.2em;
+}
+.imagenes img {
+  height: 300px;
+  width: 300px;
+  border-radius: 5%;
+  mask-image: linear-gradient(black 80%, transparent);
+}
+.imagenes {
+  border-radius: 5%;
+  margin: 0 20px;
+  text-align: center;
+}
+.abb img {
+  height: 150px;
+  width: 300px;
+}
+.abb a {
+  text-decoration: none;
+  color: #14e956;
+  font-size: 1.1em;
+}
+.abb h1 {
+  display: none;
+  font-family: "exos";
+  text-decoration: none;
+}
+.abb:hover h1 {
+  display: block;
+}
+/*------------------ CV------------------------------ */
+.cv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.izquierda {
+  max-width: 250px;
+  height: 700px;
+  background-color: transparent;
+  margin: 0 40px;
+}
+.izquierda img {
+  max-width: 250px;
+  mask-image: linear-gradient(black 80%, transparent);
+}
+.izquierda h1,
+.derecha h1,
+.derecha h2 {
+  font-family: "exos";
+}
+.izquierda p {
+  font-family: "exos";
+  text-align: justify;
+  padding: 0 10px;
+}
+.derecha {
+  max-width: 500px;
+  height: 700px;
+}
+.derecha .nombre {
+  font-size: 3em;
+}
+.derecha .cargo {
+  font-size: 1.5em;
+  color: #14e956;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f5f5f5;
+}
+.experiencia {
+  text-align: left;
+  padding-top: 15px;
+}
+.experiencia h2 {
+  color: #f5f5f547;
+}
+.experiencia .lista .principal::marker {
+  font-size: 30px;
+}
+
+.experiencia .lista .principal {
+  padding: 15px 0;
+  list-style-type: circle;
+}
+.experiencia h1 {
+  color: #14e956;
+}
+.principal p,
+.principal ul li {
+  font-family: "exos";
+}
+.titulos {
+  margin: 0 40px;
+}
+.educacion .titulo {
+  padding: 10px 0;
+  color: #14e956;
+  font-size: 2em;
+  font-family: "exos";
+  border-bottom: #f5f5f5 solid 3px;
+  padding-top: 39px;
+}
+
+.educacion .estudios li::marker {
+  font-size: 30px;
+}
+.educacion .estudios li {
+  list-style-type: circle;
+  padding: 20px 10px;
+}
+.educacion .estudios li h1,
+.educacion .estudios li h2 {
+  text-align: left;
+  font-family: "Exos";
+}
+.educacion .estudios li h2 {
+  font-size: 1em;
+  color: #f5f5f5b8;
+}
+/*----------------------CONTACTO---------------------*/
+.box-info {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+.box-info h1 {
+  text-align: left;
+  letter-spacing: 5px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.data p {
+  font-size: 1.3rem;
+}
+
+.data p i {
+  color: #14e956;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.links a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  background: #14e9589c;
+  text-align: center;
+  transition: 0.1s;
+}
+
+.links > a > i {
+  color: #fff;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 500px;
+  gap: 10px;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  background: rgba(255 255 255 / 0.1);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: #a3a3a3;
+}
+
+.input-box input:focus::placeholder,
+.input-box textarea:focus::placeholder {
+  color: transparent;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  border-bottom: 3px solid #14e956;
+  animation: shake 0.2s; /*Animacion sacada de google*/
+}
+
+.input-box textarea {
+  width: 100%;
+  height: 130px;
+  padding: 10px;
+  background: rgba(255 255 255 / 0.1);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  outline: none;
+  transition: 0.3s;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+
+.input-box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: rgba(255 255 255 / 0.3);
+  transition: 0.3s;
+}
+
+.input-box input:focus ~ i {
+  color: #14e956;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background: #10e95582;
+  color: #fff;
+  border: none;
+  transition: 0.1s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form button:hover,
+.links a:hover {
+  background: #14e958cc;
+}
+
+/*Esta animacion la he sacado de google pero me ha gustado :))
+hace que al hacer focus sobre las cajas se desplace hacia los lados*/
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+/*----------------------- CSS RESPONSIVE--------------- */
+@media (width<1700px) {
+  #cv {
+    height: 100%;
+  }
+}
 @media (width<1200px) {
   section header nav {
-    height: 8%;
     padding: 2% 50px;
   }
-
+  section {
+    height: 100%;
+  }
   section header nav .home {
     font-size: 1.4em;
   }
@@ -215,6 +506,9 @@ section header nav li a:hover {
   .imgBox img {
     width: 25em;
   }
+  .box-info > h1 {
+    text-align: center;
+  }
 }
 @media (width<800px) {
   section header nav .navbar {
@@ -230,8 +524,23 @@ section header nav li a:hover {
   .copy {
     font-size: 14px;
   }
+  .derecha .nombre,
+  .derecha .cargo,
+  .experiencia h1 {
+    font-size: 1.2em;
+  }
+  .box-info {
+    padding-right: 0px;
+    font-size: 0.8;
+  }
+  .data p {
+    font-size: 1.1em;
+  }
+  .data p i {
+    font-size: 1em;
+  }
 }
-@media (width<1200px) and (height<800px) {
+@media (height<800px) {
   section {
     height: 100%;
   }
