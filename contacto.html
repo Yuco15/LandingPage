@@ -7,8 +7,8 @@
     <title>LANDING PAGE</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script>
-    <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
-    <script src="https://kit.fontawesome.com/b408879b64.js" crossorigin="anonymous"></script>
+    <!-- <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script> -->
+    <script src="https://kit.fontawesome.com/22bbb940c3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,7 +16,13 @@
         <header>
             <nav>
                 <a href="index.html" class="home">Home</a>
-                <ul class="navbar">
+                <button class="abrir-menu" id="abrir">
+                    <i class="fa fa-bars" style="font-size:24px;"></i>
+                </button>
+                <ul class="navbar" id="navbar">
+                    <button class="cerrar-menu" id="cerrar">
+                        <i class="fa fa-xmark" style="font-size:24px;"></i>
+                    </button>
                     <li>
                         <a href="quiensoy.html">Quien soy</a>
                     </li>
@@ -34,7 +40,7 @@
         </header>
         <div class="contenido">
             <div class="box-info">
-                <h1>CONTÁCTATE </h1>
+                <h1>CONTACTEME </h1>
                 <div class="data">
                     <p><i class="fa-solid fa-phone"></i> 0123456789</p>
                     <p><i class="fa-solid fa-envelope"></i> andresmatabuena15</p>
@@ -88,6 +94,7 @@
             </div>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>
