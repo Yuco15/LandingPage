@@ -152,7 +152,7 @@ section header nav li a:hover {
   padding: 0 10px 0 10px;
   top: 15px;
   transition: 1s;
-  z-index: -1;
+  z-index: 0;
 }
 .tituloBox h2:hover,
 .frase:hover {
@@ -211,7 +211,7 @@ section header nav li a:hover {
   border-radius: 5%;
   margin: 0 20px;
   text-align: center;
-  z-index: -1;
+  z-index: 0;
 }
 .abb img {
   height: 150px;
@@ -230,7 +230,9 @@ section header nav li a:hover {
 .abb:hover h1 {
   display: block;
 }
-/*------------------ CV------------------------------ */
+/*--------------------------------------------------------*/
+/*--------------------- CV------------------------------ */
+/*------------------------------------------------------*/
 .cv {
   display: flex;
   flex-wrap: wrap;
@@ -242,7 +244,7 @@ section header nav li a:hover {
   height: 700px;
   background-color: transparent;
   margin: 0 40px;
-  z-index: -1;
+  z-index: 0;
 }
 .izquierda img {
   max-width: 250px;
@@ -321,7 +323,9 @@ section header nav li a:hover {
   font-size: 1em;
   color: #f5f5f5b8;
 }
+/*--------------------------------------------------------*/
 /*----------------------CONTACTO---------------------*/
+/*-------------------------------------------------------*/
 .box-info {
   color: #fff;
   display: flex;
@@ -379,7 +383,7 @@ form {
   text-align: center;
   width: 500px;
   gap: 10px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .input-box {
@@ -479,7 +483,89 @@ hace que al hacer focus sobre las cajas se desplace hacia los lados*/
   }
 }
 
+/*------------------------------------------------------*/
+/*----------------------Proyectos---------------------*/
+/*------------------------------------------------------*/
+.card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+}
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Para ocultar la cara posterior */
+  backface-visibility: hidden;
+  border-radius: 10px;
+  /*   
+La propiedad overflow: hidden; es una declaración de CSS (Cascading Style Sheets) que se utiliza para controlar lo que sucede con el contenido que sobrepasa los bordes de un elemento contenedor. Aquí te explico cómo funciona:
+
+hidden: Este valor especifica que el contenido que excede los límites del elemento contenedor será recortado y no será visible. Además, no se mostrarán barras de desplazamiento para ver el contenido oculto. */
+  overflow: hidden;
+  transition: 0.5s;
+}
+.card .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #14e956;
+}
+.card .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Indica como el contenido de un elemento debera ser redimensionado
+  para ajustarse a su contenedor*/
+  object-fit: cover;
+}
+.card .front h3 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-family: "exos";
+  color: #f5f5f5(2, 30, 2, 0.916);
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+.card .back {
+  transform: perspective(600px) rotateY(180deg);
+  box-shadow: 0 5px 10px #14e956;
+  background: rgb(3, 35, 54);
+  padding: 15px;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+}
+.card .back .link {
+  border-top: 1px solid #f5f5f5;
+  height: 50px;
+  line-height: 50px;
+}
+.card .back .link a {
+  color: #f5f5f5;
+}
+.card .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+.card .back p {
+  letter-spacing: 1px;
+  font-family: "exos";
+}
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+/*-----------------------------------------------------------*/
 /*----------------------- CSS RESPONSIVE--------------- */
+/*----------------------------------------------------------*/
 @media (width<1700px) {
   #cv {
     height: 100%;
@@ -488,6 +574,7 @@ hace que al hacer focus sobre las cajas se desplace hacia los lados*/
 @media (width<1200px) {
   section header nav {
     padding: 2% 50px;
+    z-index: 50;
   }
   section {
     height: 100%;
@@ -507,7 +594,6 @@ hace que al hacer focus sobre las cajas se desplace hacia los lados*/
   }
   .contenido {
     flex-wrap: wrap;
-    text-align: center;
   }
   .imgBox {
     margin-top: 100px;
@@ -520,11 +606,17 @@ hace que al hacer focus sobre las cajas se desplace hacia los lados*/
   }
 }
 @media (width<800px) {
+  section {
+    padding: 100px 20px;
+  }
+  .contenido {
+    text-align: justify;
+  }
   .redes {
     position: unset;
   }
   .publi {
-    z-index: -1;
+    z-index: 0;
   }
   .imgBox img {
     width: 15em;
@@ -534,7 +626,7 @@ hace que al hacer focus sobre las cajas se desplace hacia los lados*/
     font-size: 14px;
   }
   .copy {
-    z-index: -1;
+    z-index: 0;
   }
   .derecha .nombre,
   .derecha .cargo,
@@ -594,6 +686,9 @@ hace que al hacer focus sobre las cajas se desplace hacia los lados*/
   .navbar li a {
     color: #ecececec;
     background-color: #1c1c1c;
+  }
+  .imagenes {
+    padding: 50px 0;
   }
 }
 
